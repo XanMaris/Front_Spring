@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persons>
+    <person>
+        <fname th:text="${personInfo.lastName}"></fname>
+        <lname th:text="${personInfo.firstName}"></lname>
+        <country th:text="${personInfocountry}"></country>
+    </person>
+</persons>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<div th:fragment="menu" class="menu" style="height: 8vh" >
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" >
+    <a class="navbar-brand" href="/login">EPUL-4A</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/vente" onclick="">Market </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/privee" onclick="">Private</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+    <script>
+        // Obtenez l'URL actuelle de la page
+        var currentURL = window.location.pathname;
+
+        // Sélectionnez tous les éléments <a> dans la liste nav
+        var navLinks = document.querySelectorAll(".nav-link");
+
+        // Parcourez les liens et ajoutez la classe "active" à l'élément correspondant
+        for (var i = 0; i < navLinks.length; i++) {
+            var link = navLinks[i];
+            var linkURL = link.getAttribute("href");
+
+            if (linkURL === currentURL) {
+                link.classList.add("active");
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</div>
+</html>
+

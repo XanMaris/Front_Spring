@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Perso</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div th:replace="fragments/navBar::menu"></div>
+<h1 class="text-center">Mes images</h1>
+<!-- A voir si on le deplace dans un fragment -->
+<table class="table" >
+    <thead>
+    <tr>
+        <th scope="col">Count</th>
+        <th scope="col">Image</th>
+        <th scope="col">Actions</th>
+    </tr>
+    </thead>
+    <tr th:each="imgs, state: ${imgs}">
+        <td th:if="${state.count <= 0}" colspan="3">No images found</td>
+        <td th:if="${state.count > 0}" th:text="${state.count}">No.</td>
+        <td th:if="${state.count > 0}">
+            <img th:src="${imgs}" alt="nothing" width="100" height="100" />
+        </td>
+        <td th:if="${state.count > 0}">
+            <button> Download </button>
+            <button> Delete </button>
+        </td>
+    </tr>
+
+    <!-- Insertion de donné reprendre ce qu'il ya en dessous
+    <tbody>
+    <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+    </tr>
+    </tbody>
+    -->
+</table>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+h1 {
+    "bite": "bite"
+}
+.center-text {
+    text-align: center;
+}
+.splide__slide img {
+    width: 100%;
+    height: auto;
+}
+
+.img-container {
+    object-fit: cover; /* Ou 'contain' selon vos besoins */
+    max-height: 100%; /* Pour éviter tout débordement vers le bas */
+}
+
+
